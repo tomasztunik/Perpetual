@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+        <title>perpetual</title>
+        
+        <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis+Light' rel='stylesheet' type='text/css'>
+        <link href="static/css/style.css" rel="stylesheet" type="text/css">
+
+        <script src="lib/utils/u.js"></script>
+        
+        <script src="lib/math/geo.js"></script>
+        <script src="lib/math/Vec2.js"></script>
+        
+        <script src="lib/core/Timer.js"></script>
+        
+        <script src="lib/datastructures/scenegraph/BaseNode.js"></script>
+        <script src="lib/datastructures/scenegraph/SceneNode.js"></script>
+        <script src="lib/datastructures/scenegraph/Node.js"></script>
+
+        <script src="lib/datastructures/quadtree/QuadTree.js"></script>
+        
+        <script src="test/scenegraph.js"></script>
+        <script src="test/quadtree.indexing.js"></script>
+        <script src="test/quadtree.ball-collisions.js"></script>
+        <script src="test/quadtree.ball-collisions-brute.js"></script>
+        <script src="test/webgl.simple.js"></script>
+        <script>
+            function ready() {
+                var c = document.createElement('canvas');
+                c.id = 'perpetual';
+                c.width = document.width - 290;
+                c.height = document.height;
+                document.body.appendChild(c);
+
+                var ct = document.createElement('div');
+                ct.id = "content"
+
+                var l = document.createElement('h1');
+                l.id = "logo";
+                l.innerHTML = "perpetual";
+                ct.appendChild(l);
+
+                                
+                var d = document.createElement('div');
+                d.id = 'test-cases';
+
+                for (var test in tests) {
+                    var el = document.createElement('a'),
+                        desc = tests[test].desc;
+
+                    test = tests[test];
+
+                    el.innerHTML = test.name + "<br>";
+                    el.onclick = (function(test) { 
+                        var desc = test.desc,
+                            test = test.test;
+
+                        return function() {
+                            test();
+                            des.innerHTML = desc || "";
+                    }})(test);
+                    d.appendChild(el);
+                }
+
+                ct.appendChild(d);
+
+
+                var des = document.createElement('div');
+                des.id = 'test-desc';
+                des.innerHTML = "Meet perpetual - a perpetual endeavour to create a game/visualisation development javascript framework. Choose a test from above and enjoy. Feel free to browse the code, copy, extend, or do whatever pleases you.";
+                ct.appendChild(des);
+
+                var stats = document.createElement('a');
+                stats.id = "stats";
+                stats.onclick = function(){var script=document.createElement('script');script.type='text/javascript';script.src='http://github.com/mrdoob/stats.js/raw/master/build/Stats.js';document.body.appendChild(script);script=document.createElement('script');script.innerHTML='var interval=setInterval(function(){if(typeof Stats==\'function\'){clearInterval(interval);var stats=new Stats();stats.domElement.style.position=\'fixed\';stats.domElement.style.left=\'0px\';stats.domElement.style.top=\'0px\';document.body.appendChild(stats.domElement);setInterval(function(){stats.update();},1000/60);}},100);';document.body.appendChild(script);};
+                stats.innerHTML = "show Mr. doob's fps counter";
+                ct.appendChild(stats);
+
+                document.body.appendChild(ct);
+
+
+            }
+        </script>
+    </head>
+    <body onload="ready();">
+    </body>
+</html>

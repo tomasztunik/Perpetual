@@ -1,0 +1,21 @@
+
+perpetual
+
+
+Tomasz Marian Tunik's JavaSript playground and perpetual attempt at making something significant. Moslty html5 2d/webgl canvas stuff.
+
+Utilities:
+- Timer - requestAnimationFrame based, with deterministic logic updates model
+- Vec2 - 2d vector math as set of static methods
+- u.js - dif utilities and helpers - extend (inheritance), clamp, map, max, min, randInt, randFloat, TO_RADIANS, TO_DEGREES
+
+Datastructures:
+- scene/dependency graph - BaseNode.js, Node.js, SceneNode.js
+- quadtree - QuadTree.js
+
+Examples:
+- scene graph, children nodes transformations test
+- quad tree indexing - quadtree indexing visualisation
+- quad tree collisions
+- brute force collisions - for comparison
+- basic webgl with triangles drawing - nothign fancy, just regular
