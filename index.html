@@ -74,8 +74,15 @@
                 var stats = document.createElement('a');
                 stats.id = "stats";
                 stats.onclick = function(){var script=document.createElement('script');script.type='text/javascript';script.src='http://github.com/mrdoob/stats.js/raw/master/build/Stats.js';document.body.appendChild(script);script=document.createElement('script');script.innerHTML='var interval=setInterval(function(){if(typeof Stats==\'function\'){clearInterval(interval);var stats=new Stats();stats.domElement.style.position=\'fixed\';stats.domElement.style.left=\'0px\';stats.domElement.style.top=\'0px\';document.body.appendChild(stats.domElement);setInterval(function(){stats.update();},1000/60);}},100);';document.body.appendChild(script);};
-                stats.innerHTML = "show Mr. doob's fps counter";
+                stats.innerHTML = "Show Mr. doob's <strong>fps counter</strong>";
                 ct.appendChild(stats);
+
+                var github = document.createElement('a');
+                github.id = "github_url";
+                github.href = "https://github.com/i-eat-brainz/Perpetual";
+                github.target = "_blank";
+                github.innerHTML = "Check it on github";
+                ct.appendChild(github);
 
                 document.body.appendChild(ct);
 
