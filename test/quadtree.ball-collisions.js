@@ -112,25 +112,11 @@ Ball.prototype.update = function(dt, time) {
     } 
 }
 
-function createCanvas() {
-    var c = document.getElementById('perpetual'),
-        w = c.width,
-        h = c.height;
-    c.parentNode.removeChild(c);
-
-    c = document.createElement('canvas');
-    c.width = w;
-    c.height = h;
-    c.id = 'perpetual';
-    document.body.appendChild(c);
-}
-
 function QuadTreeCollisionsTest() {
 
     if(window._timer) window._timer.stop();
-    createCanvas();
 
-    var c = document.getElementById('perpetual'),
+    var c = u.createCanvas('container'),
         ctx = c.getContext('2d'),
         n = 900,
         scene = new QuadTreeSceneNode(ctx, 4, 2),

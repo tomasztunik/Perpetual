@@ -30,9 +30,8 @@ BruteSceneNode.prototype.update = function(dt, time) {
 function BruteForceCollisionsTest() {
 
     if(window._timer) window._timer.stop();
-    createCanvas();
 
-    var c = document.getElementById('perpetual'),
+    var c = u.createCanvas('container'),
         ctx = c.getContext('2d'),
         n = 900,
         scene = new BruteSceneNode(ctx);

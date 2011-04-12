@@ -96,24 +96,10 @@ WebGL2D.prototype.render = function() {
     gl.drawArrays(gl.TRIANGLES, 0, 3);
 };
 
-function createCanvas() {
-    var c = document.getElementById('perpetual'),
-        w = c.width,
-        h = c.height;
-    c.parentNode.removeChild(c);
-
-    c = document.createElement('canvas');
-    c.width = w;
-    c.height = h;
-    c.id = 'perpetual';
-    document.body.appendChild(c);
-}
-
 function WebGL2DTest() {
     if(window._timer) window._timer.stop();
-    createCanvas();
 
-    var c = document.getElementById('perpetual'),
+    var c = u.createCanvas('container'),
         ctx = c.getContext('experimental-webgl');
 
     var scene = new WebGL2D(ctx);

@@ -29,32 +29,20 @@
         <script src="test/webgl.simple.js"></script>
         <script>
             function ready() {
-                var c = document.createElement('canvas');
-                c.id = 'perpetual';
-                c.width = document.width - 290;
-                c.height = document.height;
-                document.body.appendChild(c);
 
-                var ct = document.createElement('div');
-                ct.id = "content"
-
-                var l = document.createElement('h1');
-                l.id = "logo";
-                l.innerHTML = "perpetual";
-                ct.appendChild(l);
-
-                                
-                var d = document.createElement('div');
-                d.id = 'test-cases';
+                var list = document.getElementById('test-cases'),
+                    des = document.getElementById('test-desc');
 
                 for (var test in tests) {
-                    var el = document.createElement('a'),
+                    var el = document.createElement('li'),
+                        a = document.createElement('a'),
                         desc = tests[test].desc;
+
 
                     test = tests[test];
 
-                    el.innerHTML = test.name + "<br>";
-                    el.onclick = (function(test) { 
+                    a.innerHTML = test.name;
+                    a.onclick = (function(test) { 
                         var desc = test.desc,
                             test = test.test;
 
@@ -62,36 +50,52 @@
                             test();
                             des.innerHTML = desc || "";
                     }})(test);
-                    d.appendChild(el);
+
+                    el.appendChild(a);
+                    list.appendChild(el);
                 }
+                var menu = document.getElementById('menu');
+                var toggle = document.createElement('a');
+                toggle.id = "toggle";
+                toggle.innerHTML = "+";
+                toggle.onclick = function(){
+                    if(!this.menu_hidden) {
+                        this.menu_hidden = true;
+                        toggle.style.top = (window.innerHeight - 22) + "px";
+                        menu.style.top = window.innerHeight + "px";
+                        menu.style.overflow = "hidden";
+                    } else {
+                        this.menu_hidden = false;
+                        toggle.style.top = "40px";
+                        menu.style.top = "60px";
+                        menu.style.overflow = "auto";
+                    }
+                }
+                document.body.appendChild(toggle);
 
-                ct.appendChild(d);
+            }
 
-
-                var des = document.createElement('div');
-                des.id = 'test-desc';
-                des.innerHTML = "Meet perpetual - a perpetual endeavour to create a game/visualisation development javascript framework. Choose a test from above and enjoy. Feel free to browse the code, copy, extend, or do whatever pleases you.";
-                ct.appendChild(des);
-
-                var stats = document.createElement('a');
-                stats.id = "stats";
-                stats.onclick = function(){var script=document.createElement('script');script.type='text/javascript';script.src='http://github.com/mrdoob/stats.js/raw/master/build/Stats.js';document.body.appendChild(script);script=document.createElement('script');script.innerHTML='var interval=setInterval(function(){if(typeof Stats==\'function\'){clearInterval(interval);var stats=new Stats();stats.domElement.style.position=\'fixed\';stats.domElement.style.left=\'0px\';stats.domElement.style.top=\'0px\';document.body.appendChild(stats.domElement);setInterval(function(){stats.update();},1000/60);}},100);';document.body.appendChild(script);};
-                stats.innerHTML = "Show Mr. doob's <strong>fps counter</strong>";
-                ct.appendChild(stats);
-
-                var github = document.createElement('a');
-                github.id = "github_url";
-                github.href = "https://github.com/i-eat-brainz/Perpetual";
-                github.target = "_blank";
-                github.innerHTML = "Check it on github";
-                ct.appendChild(github);
-
-                document.body.appendChild(ct);
-
-
+            function stats() {
+                var script=document.createElement('script');
+                script.type='text/javascript';
+                script.src='http://github.com/mrdoob/stats.js/raw/master/build/Stats.js';
+                document.body.appendChild(script);
+                script=document.createElement('script');
+                script.innerHTML='var interval=setInterval(function(){if(typeof Stats==\'function\'){clearInterval(interval);var stats=new Stats();stats.domElement.style.position=\'fixed\';stats.domElement.style.left=\'15px\';stats.domElement.style.top=\'15px\';document.body.appendChild(stats.domElement);setInterval(function(){stats.update();},1000/60);}},100);';
+                document.body.appendChild(script);
             }
         </script>
     </head>
     <body onload="ready();">
+        <div id="container"></div>
+        <div id="menu">
+            <h1 id="logo">perpetual</h1>
+            <ul id="test-cases"></ul>
+            <div id="test-desc">
+                Meet perpetual - a perpetual endeavour to create something I'm going to be happy about. Choose a test from above and enjoy. Feel free to browse the code, copy, extend, or do whatever pleases you.
+            </div>
+            <a id="stats" onclick="stats();">Show Mr. doob's <strong>fps counter</strong></a>
+            <a id="github_url" target="_blank" href="https://github.com/i-eat-brainz/Perpetual">check it out on github</a>
+        </div>
     </body>
 </html>
