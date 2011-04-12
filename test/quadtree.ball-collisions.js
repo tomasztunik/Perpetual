@@ -132,7 +132,7 @@ function QuadTreeCollisionsTest() {
 
     var c = document.getElementById('perpetual'),
         ctx = c.getContext('2d'),
-        n = 800,
+        n = 900,
         scene = new QuadTreeSceneNode(ctx, 4, 2),
         quad_tree_debuger = new QuadTreeDebugger(scene.tree);
 
@@ -144,7 +144,7 @@ function QuadTreeCollisionsTest() {
         scene.addNode(new Ball(scene.getBounds()));
     }    
 
-    window._timer = new Timer(scene);
+    window._timer = new Timer(scene, "deterministic");
     
 }
 
@@ -153,7 +153,7 @@ if(window.tests || (window.tests = {})) {
         pack: "QuadTree",
         type: "Datastructures",
         name: "Quad Tree Collisions Test",
-        desc: "800 balls with collision tests using quad tree.",
+        desc: "900 balls with collision tests using quad tree. Logics updates run at 60 updates per second.",
         test: QuadTreeCollisionsTest
     };
 }

@@ -24,4 +24,4 @@ a:hover { color: #ff00ff; }
 a#stats, a#github_url { font-size: 12px; padding: 2px 10px; display: block; }
 a#stats { padding-top: 22px; margin-top: 22px; border-top: 1px solid #666; }
 
-#content h1, #content a { text-shadow: 3px -3px 0px #222;}
+#content h1, #content a { text-shadow: 1px -1px 0px #222;}

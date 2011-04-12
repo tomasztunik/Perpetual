@@ -34,14 +34,14 @@ function BruteForceCollisionsTest() {
 
     var c = document.getElementById('perpetual'),
         ctx = c.getContext('2d'),
-        n = 800,
+        n = 900,
         scene = new BruteSceneNode(ctx);
     
     for(var i = 0; i < n; i++) {
         scene.addNode(new Ball(scene.getBounds()));
     }    
 
-    window._timer = new Timer(scene);
+    window._timer = new Timer(scene, "deterministic");
     
 }
 
@@ -50,7 +50,7 @@ if(window.tests || (window.tests = {})) {
         pack: "QuadTree",
         type: "Datastructures",
         name: "Brute Force Collisions Test",
-        desc: "800 balls with collisions tests using brute force checking",
+        desc: "900 balls with collisions tests using brute force checking. Logics updates run at 60 updates per second.",
         test: BruteForceCollisionsTest
     };
 }

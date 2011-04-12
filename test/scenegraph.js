@@ -91,7 +91,7 @@ function ScenegraphTest() {
         scene.addNode(node);
     }
     
-    window._timer = new Timer(scene);
+    window._timer = new Timer(scene, "simple");
 }
 
 if(window.tests || (window.tests = {})) {

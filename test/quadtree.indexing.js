@@ -171,7 +171,7 @@ function QuadTreeIndexingTest() {
         scene.addNode(new Circle(scene.getBounds()));
     }    
 
-    window._timer = new Timer(scene);
+    window._timer = new Timer(scene, "simple");
     
 }
 

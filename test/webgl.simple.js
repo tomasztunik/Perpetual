@@ -118,7 +118,7 @@ function WebGL2DTest() {
 
     var scene = new WebGL2D(ctx);
 
-    window._timer = new Timer(scene);
+    window._timer = new Timer(scene, "simple");
 }
 
 
