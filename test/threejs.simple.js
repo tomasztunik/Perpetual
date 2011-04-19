@@ -27,8 +27,6 @@ ThreeJSWrapper.prototype.initScene = function() {
     this.camera.up.y = 1;
     this.camera.up.z = 1;
 
-    console.log(this.camera);
-
     var material_wire = new THREE.MeshBasicMaterial({color: 0x555555, wireframe: true}),
         material_yellow = new THREE.MeshLambertMaterial({color: 0xffff00, shading: THREE.FlatShading,}),
         material_magenta = new THREE.MeshLambertMaterial({color: 0xff00ff, shading: THREE.FlatShading});
@@ -77,9 +75,9 @@ ThreeJSWrapper.prototype.initScene = function() {
     this.scene.addLight(ambientLight);
 
     var directionalLight = new THREE.DirectionalLight(0xffffff);
-    directionalLight.position.x = -500;
-    directionalLight.position.y = 200;
-    directionalLight.position.z = 400;
+    directionalLight.position.x = -2;
+    directionalLight.position.y = 0;
+    directionalLight.position.z = 2;
     directionalLight.position.normalize();
     this.scene.addLight(directionalLight);
 
@@ -88,7 +86,7 @@ ThreeJSWrapper.prototype.initScene = function() {
 
 ThreeJSWrapper.prototype.render = function(dt, time) {
 
-    time = time / 2;
+    time /= 2;
 
     this.cube.position.z = u.map(Math.sin(time * Math.PI * 2), -1, 1, 50, 300);
     this.cube.position.x = Math.cos(time * Math.PI * 2) * 200;
@@ -123,8 +121,8 @@ if(window.tests || (window.tests = {})) {
     window.tests.threejstest = {
         pack: "ThreeJS",
         type: "",
-        name: "three.js Test",
-        desc: "Basic three.js webgl rendering test",
+        name: "three.js 01",
+        desc: "Basic three.js webgl fun",
         test: ThreeJSTest
     };
 }

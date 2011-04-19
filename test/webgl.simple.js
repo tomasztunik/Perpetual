@@ -112,8 +112,8 @@ if(window.tests || (window.tests = {})) {
     window.tests.webgl2dtest = {
         pack: "WebGL2D",
         type: "",
-        name: "WebGL2D Test",
-        desc: "Simple 2D WebGL test",
+        name: "WebGL Setup",
+        desc: "Basic WebGL setup",
         test: WebGL2DTest
     };
 }

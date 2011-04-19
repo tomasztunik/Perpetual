@@ -164,7 +164,7 @@ if(window.tests || (window.tests = {})) {
     window.tests.quadtreeindexing = {
         pack: "QuadTree",
         type: "Datastructures",
-        name: "Quad Tree Indexing Test",
+        name: "Quad Tree Indexing",
         desc: "Quadtree node subdivides when more then 2 objects are in the node's bounds. The max depth of the tree is 6. The more objects there are in an area the 'hotter' it gets. Example displays 250 balls moving.",
         test: QuadTreeIndexingTest
     };

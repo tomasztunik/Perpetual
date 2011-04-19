@@ -48,7 +48,7 @@ if(window.tests || (window.tests = {})) {
     window.tests.bruteforcecollisions = {
         pack: "QuadTree",
         type: "Datastructures",
-        name: "Brute Force Collisions Test",
+        name: "Brute Force Collisions",
         desc: "900 balls with collisions tests using brute force checking. Logics updates run at 60 updates per second.",
         test: BruteForceCollisionsTest
     };

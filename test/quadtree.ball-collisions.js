@@ -138,7 +138,7 @@ if(window.tests || (window.tests = {})) {
     window.tests.quadtreecollisions = {
         pack: "QuadTree",
         type: "Datastructures",
-        name: "Quad Tree Collisions Test",
+        name: "Quad Tree Collisions",
         desc: "900 balls with collision tests using quad tree. Logics updates run at 60 updates per second.",
         test: QuadTreeCollisionsTest
     };
