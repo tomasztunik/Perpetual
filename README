@@ -5,12 +5,14 @@ perpetual
 Tomasz Marian Tunik's JavaSript playground and perpetual attempt at making something significant. Moslty html5 2d/webgl canvas stuff.
 
 Utilities:
-- Timer - requestAnimationFrame based, with deterministic logic updates model
+- Timer - requestAnimationFrame based, using 3 models - simple (update + render linked), deterministic (const update intervals + render) and simple (only render loop)
+- Camera2d - allows to pan/zoom view on the canvas and set scale or invert y axis of canvas
 - Vec2 - 2d vector math as set of static methods
-- u.js - dif utilities and helpers - extend (inheritance), clamp, map, max, min, randInt, randFloat, TO_RADIANS, TO_DEGREES
+- M2 - simple 2d matrix for transformations
+- u.js - dif utilities and helpers - extend (inheritance), clamp, map, max, min, randInt, randFloat, TO_RADIANS, TO_DEGREES.. and growing
 
 Datastructures:
-- scene/dependency graph - BaseNode.js, Node.js, SceneNode.js
+- scene/dependency graph - with canvas and HTML5 renderers
 - quadtree - QuadTree.js
 
 Examples:
@@ -18,4 +20,6 @@ Examples:
 - quad tree indexing - quadtree indexing visualisation
 - quad tree collisions
 - brute force collisions - for comparison
+- three.js - simple test of wrapping it in perpetual-style structure
 - basic webgl with triangles drawing - nothign fancy, just regular
+- and others...

@@ -87,7 +87,7 @@ if(window.tests || (window.tests = {})) {
         pack: "Scene graph",
         type: "Datastructures",
         name: "Scene Graph [html]",
-        desc: "Work in progress - html renderer - 500 dom objects",
+        desc: "Scene Graph using html renderer - 250 complex dom objects - each build out of 3 nodes",
         test: HtmlScenegraphTest
     };
 }
