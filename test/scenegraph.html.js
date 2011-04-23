@@ -23,7 +23,7 @@ HtmlRect.prototype.update = function(dt, time) {
     if (this.parent instanceof HtmlRect) {
         this.x = (Math.cos(time / this.circ_motion_factor * Math.PI * 2) * 20);
         this.y = (Math.sin(time / this.circ_motion_factor * Math.PI * 2) * 20);
-        this.rotate = u.map(time / this.rotation_factor * 100 % 36, 0, 35, 0, Math.PI * 2);
+        this.rotate = u.map(time / this.rotation_factor % 1, 0, 1, 0, Math.PI * 2);
     } else {
         if(!this.root_pos) {
             this.root_pos = {
@@ -72,7 +72,7 @@ function HtmlScenegraphTest() {
             link_node = new HtmlLink(child_node);
 
         // node.rotate = u.map(Math.random(), 0, 1, 0, Math.PI);
-        // child_node.rotate = u.map(Math.random(), 0, 1, 0, Math.PI);
+        child_node.rotate = u.map(Math.random(), 0, 1, 0, Math.PI);
         
         scene.addNode(node); // if you want to add nodes to non scene nodes you must to add the parent node to the scene first as the DOM element is created at this stage
         node.addNode(child_node);
