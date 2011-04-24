@@ -10,6 +10,10 @@ Utilities:
 - Vec2 - 2d vector math as set of static methods
 - M2 - simple 2d matrix for transformations
 - u.js - dif utilities and helpers - extend (inheritance), clamp, map, max, min, randInt, randFloat, TO_RADIANS, TO_DEGREES.. and growing
+- image-scaling.js - set of different upscalling algorithms for sprites/textures (so far Scale2x/4x + Nearest Neighbour)
+
+Sprites:
+- Animation.js + Frame.js - work in progress for advanced animations
 
 Datastructures:
 - scene/dependency graph - with canvas and HTML5 renderers
